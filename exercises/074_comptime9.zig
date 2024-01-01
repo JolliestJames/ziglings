@@ -1,6 +1,5 @@
 //
 // In addition to knowing when to use the 'comptime' keyword,
-// it's also good to know when you DON'T need it.
 //
 // The following contexts are already IMPLICITLY evaluated at
 // compile time, and adding the 'comptime' keyword would be
@@ -39,7 +38,7 @@ const llamas = makeLlamas(llama_count);
 
 // And here's the function. Note that the return value type
 // depends on one of the input arguments!
-fn makeLlamas(count: usize) [count]u8 {
+fn makeLlamas(comptime count: usize) [count]u8 {
     var temp: [count]u8 = undefined;
     var i = 0;
 
